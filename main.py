@@ -23,9 +23,9 @@ import re
 import os
 
 bot = Client("bot",
-             bot_token= "6535968101:AAFO4BnJlqGM5-EZ_h4XO7YXufbjsdq1JQw",
-             api_id= 20200825,
-             api_hash= "7e7f93e266c390d9cc5c2bffbe921e36")
+             bot_token= "6822992228:AAHAc61ZretVrDz4Ac6rkmNiPzE-te-tmiE",
+             api_id= 26116403,
+             api_hash= "f9572ff772e0ac828ce3fb1321f00e03")
 
 
 @bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
@@ -35,7 +35,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command("stop") & filters.user(ADMINS))
 async def restart_handler(_, m):
-    await m.reply_text("**STOPPED**🛑🛑", True)
+    await m.reply_text("STOPPED", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
@@ -45,7 +45,7 @@ async def account_login(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1001974000179, x)
+        await bot.send_document(-1002002687613, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -175,7 +175,7 @@ async def account_login(bot: Client, m: Message):
                     try:
                         ka = await helper.download(url, name)
                         copy = await bot.send_document(chat_id=m.chat.id,document=ka, caption=cc1)
-                        await copy.copy(chat_id = -1001974000179)
+                        await copy.copy(chat_id = -1002002687613)
                         count+=1
                         os.remove(ka)
                         time.sleep(1)
@@ -189,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1001974000179)
+                        await copy.copy(chat_id = -1002002687613)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
