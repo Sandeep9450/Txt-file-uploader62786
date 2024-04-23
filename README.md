@@ -1,6 +1,6 @@
 # txt uploader
 
-# Made By Kshitij
+# Made By Sandy
 
 
 ## DEPLOY TO HEROKU
